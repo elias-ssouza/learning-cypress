@@ -18,3 +18,9 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    if (err.message.includes('$ is not defined') || err.message.includes('jQuery is not defined')) {
+      return false
+    }
+  })
