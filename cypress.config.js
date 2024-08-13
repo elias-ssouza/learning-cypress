@@ -10,4 +10,11 @@ module.exports = defineConfig({
       })
     },
   },
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/reports',
+    reportFilename: 'report',
+    quiet: true,
+    overwrite: false,
+  }
 });

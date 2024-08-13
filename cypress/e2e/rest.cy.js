@@ -12,7 +12,7 @@ describe('Realizar testes de API', () => {
             })  
     })
 
-    it.only('Realizar get simples com retorno negativo', () => {
+    it('Realizar get simples com retorno negativo', () => {
         cy.request({
             method: 'GET',
             url: 'https://jsonplaceholder.typicode.com/comments/501',
@@ -64,6 +64,5 @@ describe('Realizar testes de API', () => {
             //expect(res.status).to.not.be.empty
         })
     })
-    
-});
+})
 

@@ -45,18 +45,29 @@ function criarCadastro (){
 function excluirCadastro (){
     cy.get('#switch-version-select').select('Bootstrap V4 Theme')
     cy.get('input[name="customerName"]').type('James')
-    cy.wait(2000)
-    cy.contains('James', { timeout: 10000 }).should('be.visible')
-    cy.get("tbody tr td input.select-row").click({multiple: true, force: true})
-    //cy.get('button.gc-bootstrap-dropdown.dropdown-toggle').click({force: true, multiple: true})
-    //cy.get('.dropdown-menu').should('be.visible')
-    cy.contains('span.text-danger', 'Delete').click({ force: true })
-    cy.contains('Are you sure that you want to delete this 1 item').should('be.visible')
+    cy.contains('James', { timeout: 10000 }).should('be.visible').then(($element) => {
+        if ($element.is(':visible')) {
+            cy.get("tbody tr td input.select-row").click({multiple: true, force: true}).then($items => {
+                if ($items.length > 1) {
+                    cy.contains('span.text-danger', 'Delete').click({ force: true })
+                    cy.contains('Are you sure that you want to delete those').should('be.visible')
+                    cy.get('.btn.btn-danger.delete-multiple-confirmation-button', { timeout: 10000 }).should('be.visible').click()
+                    cy.get('.btn.btn-danger.delete-multiple-confirmation-button').click({ force: true })
+                    cy.contains('Your data has been successfully deleted from the database.').should('be.visible')
+                } else if ($items.length === 1) {
+                    cy.contains('span.text-danger', 'Delete').click({ force: true })
+                    cy.contains('Are you sure that you want to delete this 1 item?').should('be.visible')
+                    cy.get('.btn.btn-danger.delete-multiple-confirmation-button', { timeout: 10000 }).should('be.visible').click()
+                    cy.get('.btn.btn-danger.delete-multiple-confirmation-button').click({ force: true })
+                    cy.contains('Your data has been successfully deleted from the database.').should('be.visible')
+                } 
+              })
+        } else {
+          cy.log('James não encontrado');
+        }
+      })
     //cy.contains('Are you sure that you want to delete this record?').should('be.visible')
     //cy.get('button.delete-confirmation-button').click({force: true})
-    //cy.contains('Your data has been successfully deleted from the database.', { timeout: 10000 }).should('be.visible')
-    cy.get('#delete-multiple-confirmation-button').click()
-    cy.contains('Your data has been successfully deleted from the database.').should('be.visible')
     cy.task('closeBrowser')
 }
 

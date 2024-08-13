@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-08-13T20:32:23.871Z",
+    "end": "2024-08-13T20:32:49.515Z",
+    "duration": 25644,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9c3ac2e3-8494-430b-a2d1-54e23f7f20f5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\finances.cy.js",
+      "file": "cypress\\e2e\\finances.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4521cf45-d923-4d69-bd76-ad7598f8285e",
+          "title": "Cadastro",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Cadastrar uma entrada",
+              "fullTitle": "Cadastro Cadastrar uma entrada",
+              "timedOut": null,
+              "duration": 14180,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.grocerycrud.com/v1.x/demo/bootstrap_theme\");\ncriarCadastro();",
+              "err": {},
+              "uuid": "a2025109-2aae-4df0-b063-423bcf7442f7",
+              "parentUUID": "4521cf45-d923-4d69-bd76-ad7598f8285e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Excluir uma entrada",
+              "fullTitle": "Cadastro Excluir uma entrada",
+              "timedOut": null,
+              "duration": 7624,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.grocerycrud.com/v1.x/demo/bootstrap_theme\");\nexcluirCadastro();",
+              "err": {},
+              "uuid": "127a2c09-e7d0-4831-b217-1ce05ac07c5d",
+              "parentUUID": "4521cf45-d923-4d69-bd76-ad7598f8285e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a2025109-2aae-4df0-b063-423bcf7442f7",
+            "127a2c09-e7d0-4831-b217-1ce05ac07c5d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 21804,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "quiet": true,
+        "overwrite": false
+      },
+      "version": "6.2.0"
+    }
+  }
+}
