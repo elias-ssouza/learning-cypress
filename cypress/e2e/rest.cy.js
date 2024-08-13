@@ -1,6 +1,10 @@
 
 describe('Realizar testes de API', () => {
 
+    afterEach(() => {
+        cy.screenshot()
+    })
+
     it('Realizar get simples com retorno positivo', () => {
         cy.request({
             method: 'GET',

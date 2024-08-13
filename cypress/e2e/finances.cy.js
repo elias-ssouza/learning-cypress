@@ -1,19 +1,26 @@
 
 
 describe("Cadastro", () => {
-    it("Cadastrar uma entrada", () => {
+
+    beforeEach(() => {
         cy.visit("https://www.grocerycrud.com/v1.x/demo/bootstrap_theme")
+      })
+    
+      afterEach(() => {
+        cy.screenshot()
+      })
+
+    it("Cadastrar uma entrada", () => {
 
         criarCadastro ()
+
     })
 
     it("Excluir uma entrada", () => {
-        cy.visit("https://www.grocerycrud.com/v1.x/demo/bootstrap_theme")
         
         excluirCadastro ()
 
-    });
-  
+    })
 })
 
 function criarCadastro (){

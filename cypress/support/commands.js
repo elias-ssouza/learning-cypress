@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('screenshotOnFailure', () => {
+    Cypress.on('fail', (error, runnable) => {
+      // Capture screenshot on test failure
+      cy.screenshot(`failure-${runnable.title}`, { capture: 'runner' })
+      // Return false to prevent Cypress from failing the test
+      return false
+    })
+  })
