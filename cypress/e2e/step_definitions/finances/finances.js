@@ -1,5 +1,9 @@
 import {Given, When, Then} from 'cypress-cucumber-preprocessor/steps'
 
+afterEach(() => {
+  cy.screenshot()
+})
+
 Given('que eu estou na página de cadastro', () => {
     cy.visit("https://www.grocerycrud.com/v1.x/demo/bootstrap_theme");
   });

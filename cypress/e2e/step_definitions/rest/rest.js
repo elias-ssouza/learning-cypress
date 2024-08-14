@@ -1,5 +1,9 @@
 import { Given, Then } from 'cypress-cucumber-preprocessor/steps';
 
+afterEach(() => {
+    cy.screenshot()
+})
+
 Given('I make a GET request to {string}', (url) => {
     cy.request({
         method: 'GET',
