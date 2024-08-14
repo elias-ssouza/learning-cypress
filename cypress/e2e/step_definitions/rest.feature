@@ -10,8 +10,8 @@ Feature: API Testing
 
   Scenario: Successful POST request
     Given I make a POST request to "https://jsonplaceholder.typicode.com/posts" with the following data:
-      | id  | title    | body                                |
-      | 101 | testing  | just testing but I will delete it soon |
+      | userId | id  | title    | body                                |
+      | 11     | 101 | testing  | just testing but I will delete it soon |
     Then the response status should be 201
 
   Scenario: Successful PUT request
